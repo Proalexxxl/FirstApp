@@ -5,6 +5,43 @@ import base.Payment;
 
 public class Client implements Payment, Discount {
 
+    private String name;
+    private int quantity;
+    private double price;
+    private double discountRate;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getDiscountRate() {
+        return discountRate;
+    }
+
+    public void setDiscountRate(double discountRate) {
+        this.discountRate = discountRate;
+    }
+
     @Override
     public double calcDiscount(double payment, double discountRate) {
         return payment * discountRate / 100;
