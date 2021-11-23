@@ -3,11 +3,12 @@ import controllers.ClientController;
 import controllers.EmployeeController;
 import models.Client;
 import views.ClientView;
+import views.EmployeeView;
 
 public class Main {
 
     private static Client model;
-    private static ClientView view;
+    private static EmployeeView view;
     private static ClientController clientController;
     private static EmployeeController employeeController;
     private static AppController controller;
@@ -15,8 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
         model = new Client();
-        view = new ClientView(model, clientController);
-        clientController = new ClientController(view, model);
+        view = new EmployeeView();
         employeeController = new EmployeeController();
         controller = new AppController(clientController, employeeController);
         controller.subjectChoice();

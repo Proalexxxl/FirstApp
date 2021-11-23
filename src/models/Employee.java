@@ -10,7 +10,6 @@ public class Employee implements Salary, Prize {
     private double hours;
     private double hoursRate;
     private double salesAmount;
-    private double prizeRate;
 
     public String getName() {
         return name;
@@ -50,14 +49,6 @@ public class Employee implements Salary, Prize {
 
     public void setSalesAmount(double salesAmount) {
         this.salesAmount = salesAmount;
-    }
-
-    public double getPrizeRate() {
-        return prizeRate;
-    }
-
-    public void setPrizeRate(double prizeRate) {
-        this.prizeRate = prizeRate;
     }
 
     @Override
