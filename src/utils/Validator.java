@@ -9,7 +9,17 @@ public class Validator {
     public static String validateName(Scanner scanner) {
         String str = scanner.nextLine().trim();
         while (str.isEmpty()) {
-            System.out.print("Пусто! Введите имя клиента: ");
+            System.out.print("Пусто! Введите имя: ");
+            str = scanner.nextLine().trim();
+        }
+        return str;
+    }
+
+    // Валидация ввода должности
+    public static String validatePost(Scanner scanner) {
+        String str = scanner.nextLine().trim();
+        while (str.isEmpty()) {
+            System.out.print("Пусто! Введите должность: ");
             str = scanner.nextLine().trim();
         }
         return str;
@@ -53,5 +63,45 @@ public class Validator {
             price = scanner.nextDouble();
         }
         return price;
+    }
+
+    // Валидация ввода колличества продаж
+    public static double validateSalesInput(Scanner scanner) {
+        while (!scanner.hasNextDouble()) {
+            String str = scanner.nextLine().trim();
+            System.out.printf("\"%s\" - не число!\n", str);
+            System.out.print("Введите цену!: ");
+        }
+        double sales = scanner.nextDouble();
+        while (sales <= 0) {
+            System.out.print("Неверное значение! Введите цену: ");
+            while (!scanner.hasNextDouble()) {
+                String str = scanner.nextLine().trim();
+                System.out.printf("\"%s\" - не число!\n", str);
+                System.out.print("Введите цену!: ");
+            }
+            sales = scanner.nextDouble();
+        }
+        return sales;
+    }
+
+    // Валидация ввода отработанных часов
+    public static double validateHoursInput(Scanner scanner) {
+        while (!scanner.hasNextDouble()) {
+            String str = scanner.nextLine().trim();
+            System.out.printf("\"%s\" - не число!\n", str);
+            System.out.print("Введите колличество часов: ");
+        }
+        double hours = scanner.nextDouble();
+        while (hours <= 0) {
+            System.out.print("Неверное значение! Введите колличество часов: ");
+            while (!scanner.hasNextDouble()) {
+                String str = scanner.nextLine().trim();
+                System.out.printf("\"%s\" - не число!\n", str);
+                System.out.print("Введите колличество часов!: ");
+            }
+            hours = scanner.nextDouble();
+        }
+        return hours;
     }
 }
