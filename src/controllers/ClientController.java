@@ -23,6 +23,7 @@ public class ClientController {
     void runAppClient() {
         discountRate = 10;
         pattern = "#.00";
+
         model = new Client();
         view = new ClientView();
 
@@ -35,6 +36,8 @@ public class ClientController {
         paymentRound = Rounder.round(payment, pattern);
         discountRound = Rounder.round(discount, pattern);
         finalPaymentRound = Rounder.round(finalPayment, pattern);
+
+        view.outputDataClient();
     }
 
     public String getDiscountRound() {

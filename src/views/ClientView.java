@@ -33,7 +33,7 @@ public class ClientView {
         scanner.close();
     }
 
-    void outputDataClient() {
+    public void outputDataClient() {
         controller = new ClientController();
 
         System.out.println("Имя покупателя: " + model.getName() +
