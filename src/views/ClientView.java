@@ -8,6 +8,7 @@ import controllers.ClientController;
 public class ClientView {
 
     Client model;
+    ClientController controller;
     String name;
     int quantity;
     double price;
@@ -33,11 +34,13 @@ public class ClientView {
     }
 
     void outputDataClient() {
+        controller = new ClientController();
+
         System.out.println("Имя покупателя: " + model.getName() +
                 "\nКолличество купленного товара: " + model.getQuantity() +
-                "шт.\nЦена единицы товара: " + model.getPrice() +
-                "грн.\nСумма покупок: " +
-                "грн.\nСкидка: " +
-                "грн.\nСумма с учетом скидки: " + "грн.");
+                " шт.\nЦена единицы товара: " + model.getPrice() +
+                " грн.\nСумма покупок: " + controller.getPaymentRound() +
+                " грн.\nСкидка: " + controller.getDiscountRound() +
+                " грн.\nСумма с учетом скидки: " + controller.getFinalPaymentRound() + " грн.");
     }
 }
