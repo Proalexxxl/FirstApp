@@ -31,5 +31,11 @@ public class EmployeeController {
         hoursRate = 300;
         prizeRate = 4;
         pattern = "#.00";
+
+        salary = employeeModel.calcSalary(employeeModel.getHours(), hoursRate);
+        prize = employeeModel.calcPrize(employeeModel.getSalesAmount(), prizeRate);
+        totalSalary = salary + prize;
+
+
     }
 }
