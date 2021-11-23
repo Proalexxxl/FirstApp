@@ -19,10 +19,16 @@ public class ClientController {
     String paymentRound;
     String finalPaymentRound;
 
-
     void runAppClient() {
+        discountRate = 10;
+        model = new Client();
         view = new ClientView();
+
         view.inputDataClient();
+
+        payment = model.calcPayment(model.getQuantity(),model.getPrice());
+        discount = model.calcDiscount(payment, discountRate);
+        finalPayment = payment - discount;
     }
 
     public String getDiscountRound() {
