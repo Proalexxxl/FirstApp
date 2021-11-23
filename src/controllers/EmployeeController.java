@@ -41,6 +41,12 @@ public class EmployeeController {
         prizeRound = Rounder.round(prize, pattern);
         totalSalaryRound = Rounder.round(totalSalary, pattern);
 
-
+        System.out.println("Имя сотрудника: " + employeeModel.getName() +
+                        "\nДолжность сотрудника: " + employeeModel.getPost() +
+                        "\nКолличество отработанных часов: " + employeeModel.getHours() +
+                        " ч.\nСсума продаж: " + employeeModel.getSalesAmount() +
+                        " грн.\nЗаработная плата: " + salaryRound +
+                        " грн.\nПремия: " + prizeRound +
+                        " грн.\nИтого к начислению: " + totalSalaryRound + " грн.");
     }
 }
