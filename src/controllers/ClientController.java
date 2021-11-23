@@ -9,9 +9,6 @@ public class ClientController {
     ClientView view;
     Client model;
     String pattern;
-//    Rounder rounder;
-//    int quantity;
-//    double price;
     double discount;
     double discountRate;
     double payment;
@@ -20,16 +17,16 @@ public class ClientController {
     String paymentRound;
     String finalPaymentRound;
 
-    void runAppClient() {
+    public void runAppClient() {
+        view = new ClientView();
+        model = new Client();
+
         discountRate = 10;
         pattern = "#.00";
 
-        model = new Client();
-        view = new ClientView();
-
         view.inputDataClient();
 
-        payment = model.calcPayment(model.getQuantity(),model.getPrice());
+        payment = model.calcPayment(model.getQuantity(), model.getPrice());
         discount = model.calcDiscount(payment, discountRate);
         finalPayment = payment - discount;
 

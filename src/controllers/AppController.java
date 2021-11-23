@@ -9,6 +9,8 @@ public class AppController {
     EmployeeController employee;
 
     public void subjectChoice(){
+        client = new ClientController();
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите субъекта (клиент/сотрудник): ");
         subject = sc.nextLine();

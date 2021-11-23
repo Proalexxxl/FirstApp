@@ -16,6 +16,8 @@ public class ClientView {
 
     public void inputDataClient() {
         model = new Client();
+        controller = new ClientController();
+
         scanner = new Scanner(System.in);
 
         System.out.println("Введите имя клиента:");
@@ -34,7 +36,6 @@ public class ClientView {
     }
 
     public void outputDataClient() {
-        controller = new ClientController();
 
         System.out.println("Имя покупателя: " + model.getName() +
                 "\nКолличество купленного товара: " + model.getQuantity() +
