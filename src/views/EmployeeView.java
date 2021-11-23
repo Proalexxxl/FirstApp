@@ -14,6 +14,10 @@ public class EmployeeView {
     double hours;
     double salesAmount;
 
+    public EmployeeView(Employee employeeModel) {
+        this.employeeModel = employeeModel;
+    }
+
     public void inputData() {
 
         scanner = new Scanner(System.in);
