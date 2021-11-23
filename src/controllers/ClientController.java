@@ -25,5 +25,15 @@ public class ClientController {
         view.inputDataClient();
     }
 
+    public String getDiscountRound() {
+        return discountRound;
+    }
 
+    public String getPaymentRound() {
+        return paymentRound;
+    }
+
+    public String getFinalPaymentRound() {
+        return finalPaymentRound;
+    }
 }
