@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         clientModel = new Client();
-        view = new ClientView(clientModel, clientController);
+        view = new ClientView(clientModel);
         clientController = new ClientController(view, clientModel);
         employeeController = new EmployeeController();
         controller = new AppController(clientController, employeeController);

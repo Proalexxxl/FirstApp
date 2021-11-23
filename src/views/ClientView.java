@@ -8,15 +8,13 @@ import controllers.ClientController;
 public class ClientView {
 
     Client clientModel;
-    ClientController clientController;
     String name;
     int quantity;
     double price;
     Scanner scanner;
 
-    public ClientView(Client model, ClientController clientController) {
+    public ClientView(Client model) {
         this.clientModel = model;
-        this.clientController = clientController;
     }
 
     public void inputDataClient() {
