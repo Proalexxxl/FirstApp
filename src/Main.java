@@ -6,7 +6,7 @@ import views.ClientView;
 
 public class Main {
 
-    private static Client model;
+    private static Client clientModel;
     private static ClientView view;
     private static ClientController clientController;
     private static EmployeeController employeeController;
@@ -14,9 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        model = new Client();
-        view = new ClientView(model, clientController);
-        clientController = new ClientController(view, model);
+        clientModel = new Client();
+        view = new ClientView(clientModel, clientController);
+        clientController = new ClientController(view, clientModel);
         employeeController = new EmployeeController();
         controller = new AppController(clientController, employeeController);
         controller.subjectChoice();

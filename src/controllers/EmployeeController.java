@@ -2,7 +2,9 @@ package controllers;
 
 public class EmployeeController {
 
-    void runAppEmployee() {
+
+
+    public void runAppEmployee() {
 
     }
 }

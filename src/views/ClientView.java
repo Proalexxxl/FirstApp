@@ -7,7 +7,7 @@ import controllers.ClientController;
 
 public class ClientView {
 
-    Client model;
+    Client clientModel;
     ClientController clientController;
     String name;
     int quantity;
@@ -15,7 +15,7 @@ public class ClientView {
     Scanner scanner;
 
     public ClientView(Client model, ClientController clientController) {
-        this.model = model;
+        this.clientModel = model;
         this.clientController = clientController;
     }
 
@@ -24,15 +24,15 @@ public class ClientView {
 
         System.out.println("Введите имя клиента:");
         name = Validator.validateName(scanner);
-        model.setName(name);
+        clientModel.setName(name);
 
         System.out.println("Введите колличество купленного товара:");
         quantity = Validator.validateQuantityInput(scanner);
-        model.setQuantity(quantity);
+        clientModel.setQuantity(quantity);
 
         System.out.println("Введите цену единицы товара:");
         price = Validator.validatePriceInput(scanner);
-        model.setPrice(price);
+        clientModel.setPrice(price);
 
         scanner.close();
     }

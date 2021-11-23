@@ -7,7 +7,7 @@ import utils.Rounder;
 public class ClientController {
 
     ClientView view;
-    Client model;
+    Client clientModel;
     String pattern;
     double discount;
     double discountRate;
@@ -19,7 +19,7 @@ public class ClientController {
 
     public ClientController(ClientView view, Client model) {
         this.view = view;
-        this.model = model;
+        this.clientModel = model;
     }
 
     public void runAppClient() {
@@ -29,17 +29,17 @@ public class ClientController {
 
         view.inputDataClient();
 
-        payment = model.calcPayment(model.getQuantity(), model.getPrice());
-        discount = model.calcDiscount(payment, discountRate);
+        payment = clientModel.calcPayment(clientModel.getQuantity(), clientModel.getPrice());
+        discount = clientModel.calcDiscount(payment, discountRate);
         finalPayment = payment - discount;
 
         paymentRound = Rounder.round(payment, pattern);
         discountRound = Rounder.round(discount, pattern);
         finalPaymentRound = Rounder.round(finalPayment, pattern);
 
-        String output = "Имя покупателя: " + model.getName() +
-                "\nКолличество купленного товара: " + model.getQuantity() +
-                " шт.\nЦена единицы товара: " + model.getPrice() +
+        String output = "Имя покупателя: " + clientModel.getName() +
+                "\nКолличество купленного товара: " + clientModel.getQuantity() +
+                " шт.\nЦена единицы товара: " + clientModel.getPrice() +
                 " грн.\nСумма покупок: " + paymentRound +
                 " грн.\nСкидка: " + discountRound +
                 " грн.\nСумма с учетом скидки: " + finalPaymentRound + " грн.";
