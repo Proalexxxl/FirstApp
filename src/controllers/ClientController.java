@@ -8,9 +8,10 @@ public class ClientController {
 
     ClientView view;
     Client model;
-    Rounder rounder;
-    int quantity;
-    double price;
+    String pattern;
+//    Rounder rounder;
+//    int quantity;
+//    double price;
     double discount;
     double discountRate;
     double payment;
@@ -21,6 +22,7 @@ public class ClientController {
 
     void runAppClient() {
         discountRate = 10;
+        pattern = "#.00";
         model = new Client();
         view = new ClientView();
 
@@ -29,6 +31,10 @@ public class ClientController {
         payment = model.calcPayment(model.getQuantity(),model.getPrice());
         discount = model.calcDiscount(payment, discountRate);
         finalPayment = payment - discount;
+
+        paymentRound = Rounder.round(payment, pattern);
+        discountRound = Rounder.round(discount, pattern);
+        finalPaymentRound = Rounder.round(finalPayment, pattern);
     }
 
     public String getDiscountRound() {
