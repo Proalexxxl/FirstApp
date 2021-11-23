@@ -17,9 +17,12 @@ public class ClientController {
     String paymentRound;
     String finalPaymentRound;
 
+    public ClientController(ClientView view, Client model) {
+        this.view = view;
+        this.model = model;
+    }
+
     public void runAppClient() {
-        view = new ClientView();
-        model = new Client();
 
         discountRate = 10;
         pattern = "#.00";
@@ -34,18 +37,13 @@ public class ClientController {
         discountRound = Rounder.round(discount, pattern);
         finalPaymentRound = Rounder.round(finalPayment, pattern);
 
-        view.outputDataClient();
-    }
+        String output = "Имя покупателя: " + model.getName() +
+                "\nКолличество купленного товара: " + model.getQuantity() +
+                " шт.\nЦена единицы товара: " + model.getPrice() +
+                " грн.\nСумма покупок: " + paymentRound +
+                " грн.\nСкидка: " + discountRound +
+                " грн.\nСумма с учетом скидки: " + finalPaymentRound + " грн.";
 
-    public String getDiscountRound() {
-        return discountRound;
-    }
-
-    public String getPaymentRound() {
-        return paymentRound;
-    }
-
-    public String getFinalPaymentRound() {
-        return finalPaymentRound;
+        view.outputDataClient(output);
     }
 }

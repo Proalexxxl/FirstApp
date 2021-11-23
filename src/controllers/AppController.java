@@ -5,11 +5,15 @@ import java.util.Scanner;
 public class AppController {
 
     String subject;
-    ClientController client;
-    EmployeeController employee;
+    ClientController clientController;
+    EmployeeController employeeController;
+
+    public AppController(ClientController clientController, EmployeeController employeeController) {
+        this.clientController = clientController;
+        this.employeeController = employeeController;
+    }
 
     public void subjectChoice(){
-        client = new ClientController();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите субъекта (клиент/сотрудник): ");
@@ -18,8 +22,8 @@ public class AppController {
         subject = subject.toLowerCase().trim();
 
         switch (subject) {
-            case "клиент" -> client.runAppClient();
-            case "сотрудник" -> employee.runAppEmployee();
+            case "клиент" -> clientController.runAppClient();
+            case "сотрудник" -> employeeController.runAppEmployee();
             default -> System.out.println("Неверный ввод.");
         }
     }

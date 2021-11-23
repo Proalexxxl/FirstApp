@@ -8,16 +8,18 @@ import controllers.ClientController;
 public class ClientView {
 
     Client model;
-    ClientController controller;
+    ClientController clientController;
     String name;
     int quantity;
     double price;
     Scanner scanner;
 
-    public void inputDataClient() {
-        model = new Client();
-        controller = new ClientController();
+    public ClientView(Client model, ClientController clientController) {
+        this.model = model;
+        this.clientController = clientController;
+    }
 
+    public void inputDataClient() {
         scanner = new Scanner(System.in);
 
         System.out.println("Введите имя клиента:");
@@ -35,13 +37,8 @@ public class ClientView {
         scanner.close();
     }
 
-    public void outputDataClient() {
+    public void outputDataClient(String output) {
 
-        System.out.println("Имя покупателя: " + model.getName() +
-                "\nКолличество купленного товара: " + model.getQuantity() +
-                " шт.\nЦена единицы товара: " + model.getPrice() +
-                " грн.\nСумма покупок: " + controller.getPaymentRound() +
-                " грн.\nСкидка: " + controller.getDiscountRound() +
-                " грн.\nСумма с учетом скидки: " + controller.getFinalPaymentRound() + " грн.");
+        System.out.println(output);
     }
 }
