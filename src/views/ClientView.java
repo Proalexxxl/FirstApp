@@ -12,7 +12,7 @@ public class ClientView {
     double price;
     Scanner scanner;
 
-    public void inputData() {
+    public void inputDataClient() {
         model = new Client();
         scanner = new Scanner(System.in);
 
@@ -29,5 +29,14 @@ public class ClientView {
         model.setPrice(price);
 
         scanner.close();
+    }
+
+    void outputDataClient() {
+        System.out.println("Имя покупателя: " + model.getName() +
+                "\nКолличество купленного товара: " + model.getQuantity() +
+                "шт.\nЦена единицы товара: " + model.getPrice() +
+                "грн.\nСумма покупок: " +
+                "грн.\nСкидка: " +
+                "грн.\nСумма с учетом скидки: " + "грн.");
     }
 }
