@@ -2,9 +2,9 @@ import controllers.AppController;
 
 public class Main {
 
-    private static AppController controller;
-
     public static void main(String[] args) {
+
+        AppController controller = new AppController();
         controller.subjectChoice();
     }
 }
