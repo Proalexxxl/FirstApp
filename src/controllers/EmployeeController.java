@@ -2,6 +2,7 @@ package controllers;
 
 import models.Employee;
 import views.EmployeeView;
+import utils.Rounder;
 
 public class EmployeeController {
 
@@ -35,6 +36,10 @@ public class EmployeeController {
         salary = employeeModel.calcSalary(employeeModel.getHours(), hoursRate);
         prize = employeeModel.calcPrize(employeeModel.getSalesAmount(), prizeRate);
         totalSalary = salary + prize;
+
+        salaryRound = Rounder.round(salary, pattern);
+        prizeRound = Rounder.round(prize, pattern);
+        totalSalaryRound = Rounder.round(totalSalary, pattern);
 
 
     }
