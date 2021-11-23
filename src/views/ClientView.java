@@ -16,6 +16,18 @@ public class ClientView {
         model = new Client();
         scanner = new Scanner(System.in);
 
+        System.out.println("Введите имя клиента:");
+        name = Validator.validateName(scanner);
+        model.setName(name);
 
+        System.out.println("Введите колличество купленного товара:");
+        quantity = Validator.validateQuantityInput(scanner);
+        model.setQuantity(quantity);
+
+        System.out.println("Введите цену единицы товара:");
+        price = Validator.validatePriceInput(scanner);
+        model.setPrice(price);
+
+        scanner.close();
     }
 }
