@@ -3,7 +3,6 @@ package views;
 import utils.Validator;
 import models.Client;
 import java.util.Scanner;
-import controllers.ClientController;
 
 public class ClientView {
 

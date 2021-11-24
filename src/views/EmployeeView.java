@@ -1,7 +1,6 @@
 package views;
 
 import java.util.Scanner;
-
 import models.Employee;
 import utils.Validator;
 

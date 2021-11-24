@@ -5,6 +5,16 @@ import java.util.Scanner;
 // Валидатор ввода значений
 public class Validator {
 
+    // Валидация ввода субъерка
+    public static String validateSubject(Scanner scanner) {
+        String str = scanner.nextLine().trim();
+        while (str.isEmpty()) {
+            System.out.print("Пусто! Введите субъекта: ");
+            str = scanner.nextLine().trim();
+        }
+        return str;
+    }
+
     // Валидация ввода имени
     public static String validateName(Scanner scanner) {
         String str = scanner.nextLine().trim();
