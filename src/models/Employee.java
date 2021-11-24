@@ -8,9 +8,7 @@ public class Employee implements Salary, Prize {
     private String name;
     private String post;
     private double hours;
-    private double hoursRate;
     private double salesAmount;
-    private double prizeRate;
 
     public String getName() {
         return name;
@@ -36,28 +34,12 @@ public class Employee implements Salary, Prize {
         this.hours = hours;
     }
 
-    public double getHoursRate() {
-        return hoursRate;
-    }
-
-    public void setHoursRate(double hoursRate) {
-        this.hoursRate = hoursRate;
-    }
-
     public double getSalesAmount() {
         return salesAmount;
     }
 
     public void setSalesAmount(double salesAmount) {
         this.salesAmount = salesAmount;
-    }
-
-    public double getPrizeRate() {
-        return prizeRate;
-    }
-
-    public void setPrizeRate(double prizeRate) {
-        this.prizeRate = prizeRate;
     }
 
     @Override

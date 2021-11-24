@@ -8,7 +8,6 @@ public class Client implements Payment, Discount {
     private String name;
     private int quantity;
     private double price;
-    private double discountRate;
 
     public String getName() {
         return name;
@@ -32,14 +31,6 @@ public class Client implements Payment, Discount {
 
     public void setPrice(double price) {
         this.price = price;
-    }
-
-    public double getDiscountRate() {
-        return discountRate;
-    }
-
-    public void setDiscountRate(double discountRate) {
-        this.discountRate = discountRate;
     }
 
     @Override
