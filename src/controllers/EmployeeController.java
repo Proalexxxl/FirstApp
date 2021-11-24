@@ -18,8 +18,6 @@ public class EmployeeController {
     String totalSalaryRound;
     String pattern;
 
-
-
     public EmployeeController(Employee employeeModel, EmployeeView employeeView) {
         this.employeeModel = employeeModel;
         this.employeeView = employeeView;

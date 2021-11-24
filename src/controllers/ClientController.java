@@ -37,13 +37,11 @@ public class ClientController {
         discountRound = Rounder.round(discount, pattern);
         finalPaymentRound = Rounder.round(finalPayment, pattern);
 
-        String output = "Имя покупателя: " + clientModel.getName() +
+        System.out.println("Имя покупателя: " + clientModel.getName() +
                 "\nКолличество купленного товара: " + clientModel.getQuantity() +
                 " шт.\nЦена единицы товара: " + clientModel.getPrice() +
                 " грн.\nСумма покупок: " + paymentRound +
                 " грн.\nСкидка: " + discountRound +
-                " грн.\nСумма с учетом скидки: " + finalPaymentRound + " грн.";
-
-        view.outputDataClient(output);
+                " грн.\nСумма с учетом скидки: " + finalPaymentRound + " грн.");
     }
 }

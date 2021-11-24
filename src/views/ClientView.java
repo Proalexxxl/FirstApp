@@ -33,9 +33,4 @@ public class ClientView {
 
         scanner.close();
     }
-
-    public void outputDataClient(String output) {
-
-        System.out.println(output);
-    }
 }

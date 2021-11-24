@@ -1,7 +1,6 @@
 package controllers;
 
 import utils.Validator;
-
 import java.util.Scanner;
 
 public class AppController {
