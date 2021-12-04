@@ -19,7 +19,7 @@ public class AppController {
 
         scanner = new Scanner(System.in);
         System.out.println("Введите субъекта (клиент/сотрудник): ");
-        subject = Validator.validateSubject(scanner);
+        subject = Validator.validateString(scanner);
 
         subject = subject.toLowerCase().trim();
 

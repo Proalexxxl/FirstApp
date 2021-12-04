@@ -21,19 +21,19 @@ public class EmployeeView {
 
         scanner = new Scanner(System.in);
         System.out.println("Введите имя сотрудника: ");
-        name = Validator.validateName(scanner);
+        name = Validator.validateString(scanner);
         employeeModel.setName(name);
 
         System.out.println("Введите должность сотрудника: ");
-        post = Validator.validatePost(scanner);
+        post = Validator.validateString(scanner);
         employeeModel.setPost(post);
 
         System.out.println("Введите колличество отработанных часов: ");
-        hours = Validator.validateHoursInput(scanner);
+        hours = Validator.validateDoubleInput(scanner);
         employeeModel.setHours(hours);
 
         System.out.println("Ввудите сумму продаж: ");
-        salesAmount = Validator.validateSalesInput(scanner);
+        salesAmount = Validator.validateDoubleInput(scanner);
         employeeModel.setSalesAmount(salesAmount);
 
         scanner.close();

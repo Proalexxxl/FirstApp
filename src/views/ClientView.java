@@ -20,15 +20,15 @@ public class ClientView {
         scanner = new Scanner(System.in);
 
         System.out.println("Введите имя клиента:");
-        name = Validator.validateName(scanner);
+        name = Validator.validateString(scanner);
         clientModel.setName(name);
 
         System.out.println("Введите колличество купленного товара:");
-        quantity = Validator.validateQuantityInput(scanner);
+        quantity = Validator.validateIntInput(scanner);
         clientModel.setQuantity(quantity);
 
         System.out.println("Введите цену единицы товара:");
-        price = Validator.validatePriceInput(scanner);
+        price = Validator.validateDoubleInput(scanner);
         clientModel.setPrice(price);
 
         scanner.close();
