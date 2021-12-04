@@ -9,6 +9,7 @@ public class AppController {
     ClientController clientController;
     EmployeeController employeeController;
     Scanner scanner;
+    boolean variableEquals;
 
     public AppController(ClientController clientController, EmployeeController employeeController) {
         this.clientController = clientController;
@@ -16,10 +17,15 @@ public class AppController {
     }
 
     public void subjectChoice(){
-
+        variableEquals = true;
         scanner = new Scanner(System.in);
         System.out.println("Введите субъекта (клиент/сотрудник): ");
-        subject = Validator.validateString(scanner);
+        subject  = scanner.nextLine().trim().toLowerCase();
+
+        while (!(subject.equals("клиент") || subject.equals("сотрудник"))) {
+            System.out.printf("%s - не соответствует критериям! Повторите ввод: ", subject);
+            subject = scanner.nextLine().trim().toLowerCase();
+        }
 
         subject = subject.toLowerCase().trim();
 
